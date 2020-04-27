@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="appTitle">Weather App - Vanilla Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="flexbox">
+        <button id="dark-mode-toggle" onclick="darkMode()">🌙</button>
+        <div class="container">
+            <div class="weather-container">
+                <div class="location">
+                    <p>New York</p>
+                    <div class="country">
+                        US
+                    </div>
+                    <div class="weather-icon">
+                        <img src="icons/unknown.png" alt="">
+                    </div>
+                </div>
+                <div id="currentTime">
+                    <p>11:22:33 AM</p>
+                </div>
+                <div class="temperature-value">
+                    <p>X°<span>C</span></p>
+                    <div class="temperature-description">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="feels-like">
+                    <p></p>
+                </div>
+                <div class="HandL">
+                    <p><small><a href="https://instagram.com/tejxv" target="blank">@tejxv</a></small><p>
+                </div>
+                <div class="humidity">
+                    <p><strong>Allow location permission to fetch weather</strong></p>
+                </div>
+                <div class="windspeed">
+                    <p></p>
+                </div>
+                <div class="notification"></div>
+            </div>
+            <div class="unitToggle-container">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span id="unitToggle" class="slider">
+                        <div>°C</div>
+                        <div>°F</div>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

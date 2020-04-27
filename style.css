@@ -1,0 +1,227 @@
+@import url('https://rsms.me/inter/inter.css');
+* {
+    font-family: "Inter";
+}
+*,
+:after,
+:before {
+    box-sizing: inherit;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+    margin: 0;
+    background-color: #E2E2E2;
+    transition: all .5s ease;
+}
+div {
+    border: px solid red;
+}
+:root {
+    font-size: 20px;
+    --background: #000;
+    --text: ;
+    --spacing: .2em;
+}
+.flexbox {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 2em;
+    width: fit-content;
+    height: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(170, 170, 170, 0.5) 0%, #e2e2e200 100%);
+    border-radius: 10px;
+}
+.location {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.location p {
+    margin: 0;
+    margin-right: 10px;
+    color: black;
+    font-size: 1.8em;
+    line-height: .8;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.country {
+    align-self: center;
+    box-sizing: border-box;
+    padding: 2px 15px;
+    margin-right: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.weather-icon {
+    align-self: center;
+}
+.weather-icon img {
+    height: 50px;
+}
+#currentTime {
+    font-weight: normal;
+}
+.temperature-value p {
+    margin: 0;
+    padding-right: 20px;
+    color: black;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+.temperature-value {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: .5em 0;
+}
+.temperature-description p {
+    color: black;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.6em;
+    line-height: .8;
+}
+.feelslike {
+    margin-top: var(--spacing);
+}
+.HandL {
+    margin-top: var(--spacing);
+}
+.humidity {
+    margin-top: var(--spacing);
+}
+.windspeed {
+    margin-top: var(--spacing);
+}
+.notification {
+    display: none;
+}
+.notification p {
+    color: red;
+    font-size: 1.2em;
+    margin:  0;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-align: left; 
+}
+.notification a {
+    color: red;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    text-align: center;
+    padding: .2em 1.2em;
+}
+.dark-mode {
+    background: black;
+    color: white;
+    transition: all .5s ease;
+}
+.dark-mode p {
+    color: white;
+    transition: all .5s ease;
+}
+.dark-mode img {
+  filter: contrast(2);
+}
+#dark-mode-toggle {
+    border: none;
+    font-size: large;
+    border-radius: 50%;
+    line-height: 0;
+    background-color: #008eff80;
+    width: 1.5rem;
+    height: 2rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    outline: none;
+    -webkit-transition: all .05s ease;
+    -moz-transition: all .05s ease;
+    -o-transition: all .05s ease;
+    -ms-transition: all .05s ease;
+    transition: all .05s ease;
+}
+#dark-mode-toggle:active {
+  transform: scale(.85);
+}
+/* C to F Toggle */
+.unitToggle-container {
+    margin: 1em 0;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196f342;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f342;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(36px);
+  -ms-transform: translateX(36px);
+  transform: translateX(36px);
+}
