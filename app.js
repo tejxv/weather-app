@@ -11,6 +11,51 @@ const windspeedElement = document.querySelector(".windspeed");
 const countryElement = document.querySelector(".country");
 const unitToggleElement = document.querySelector(".slider")
 const appTitleElement = document.querySelector(".appTitle")
+const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+// DARK-MODE TOGGLE
+let darkMode = localStorage.getItem('darkMode');
+
+if (darkMode === 'enabled') {
+  	enableDarkMode();
+} else {
+	disableDarkMode();
+}
+
+darkModeToggle.addEventListener('click', () => {
+  darkMode = localStorage.getItem('darkMode'); 
+  if (darkMode !== 'enabled') {
+    enableDarkMode();  
+  } else {  
+    disableDarkMode(); 
+  }
+});
+
+function enableDarkMode() {
+   var element = document.body;
+   element.classList.add("dark-mode");
+   localStorage.setItem('darkMode', 'enabled');
+   var emoji = document.getElementById("dark-mode-toggle");
+
+    if (emoji.innerHTML ==="🌙") {
+        emoji.innerHTML = "🔆";
+    }   else {
+        emoji.innerHTML = "🌙";
+    }
+}
+
+function disableDarkMode() {
+   var element = document.body;
+   element.classList.remove("dark-mode");
+   localStorage.setItem('darkMode', null );
+   var emoji = document.getElementById("dark-mode-toggle");
+
+    if (emoji.innerHTML ==="🌙") {
+        emoji.innerHTML = "🔆";
+    }   else {
+        emoji.innerHTML = "🌙";
+    }
+}
 
 // APP DATA
 const weather = {};
@@ -29,7 +74,7 @@ if('geolocation' in navigator){
     navigator.geolocation.getCurrentPosition(setPosition, showError);
 }else{
     notificationElement.style.display = "block";
-    notificationElement.innerHTML = "<p>works on chrome, firefox, safari & edge</p>";
+    notificationElement.innerHTML = "<p>location is disabled in your browser</p>";
 }
 
 // SET USER'S POSITION
@@ -93,7 +138,7 @@ function celsiusToFahrenheit(temperature){
     return (temperature * 9/5) + 32;
 }
 
-// TOGGLE SWITCH
+// C to F TOGGLE SWITCH
 unitToggleElement.addEventListener("click", function(){
     if(weather.temperature.value === undefined) return;
     
@@ -145,19 +190,6 @@ window.onload = function() {
     }     
   document.getElementById('currentTime').innerHTML =     hour+':'+min+':'+sec +' '+mid ;
     setTimeout(clock, 1000);
-    }
-}
-
-// DARK-MODE TOGGLE
-function darkMode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-   var emoji = document.getElementById("dark-mode-toggle");
-
-    if (emoji.innerHTML ==="🌙") {
-        emoji.innerHTML = "🔆";
-    }   else {
-        emoji.innerHTML = "🌙";
     }
 }
 
