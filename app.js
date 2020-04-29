@@ -9,8 +9,8 @@ const highandLowElement = document.querySelector(".HandL");
 const humidityElement = document.querySelector(".humidity");
 const windspeedElement = document.querySelector(".windspeed");
 const countryElement = document.querySelector(".country");
-const unitToggleElement = document.querySelector(".slider")
-const appTitleElement = document.querySelector(".appTitle")
+const unitToggleElement = document.querySelector(".slider");
+const appTitleElement = document.querySelector(".appTitle");
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 
 // DARK-MODE TOGGLE
@@ -88,13 +88,12 @@ function setPosition(position){
 // SHOW ERROR WHEN GEOLOCATION NOT AVAILABLE
 function showError(error){
     notificationElement.style.display = "block";
-    notificationElement.innerHTML = `<p>You denied permission :(</p><br><a href="" onclick="location.reload()">Ask again</a>`;
+    notificationElement.innerHTML = `<p>You denied permission :(</p><br><a href="" onclick="location.reload()">Reload</a>`;
 }
 
 // GET WEATHER FROM API
 function getWeather(latitude, longitude){
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
-    console.log(api)
     fetch(api)
         .then(function(response){
             let data = response.json();
@@ -192,4 +191,3 @@ window.onload = function() {
     setTimeout(clock, 1000);
     }
 }
-
