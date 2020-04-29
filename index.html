@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title class="appTitle">Weather App - Vanilla Javascript</title>
+    <title class="appTitle">Weather App - Javascript - @tejxv</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/javascript" href="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="flexbox">
-        <button id="dark-mode-toggle" onclick="darkMode()">🌙</button>
-        <div class="container">
+        <div data-tilt data-tilt-scale="1.2" data-tilt-speed="500" data-tilt-max="0" id="dark-mode-toggle">🔆</div>
+        <div data-tilt data-tilt-scale="1" data-tilt-speed="1000" data-tilt-max="2" class="container">
             <div class="weather-container">
                 <div class="location">
-                    <p>New York</p>
+                    <p></p>
                     <div class="country">
-                        US
-                    </div>
+                        </div>
                     <div class="weather-icon">
                         <img src="icons/unknown.png" alt="">
                     </div>
                 </div>
                 <div id="currentTime">
-                    <p>11:22:33 AM</p>
+                    <p></p>
                 </div>
                 <div class="temperature-value">
                     <p>X°<span>C</span></p>
@@ -42,7 +42,8 @@
                 <div class="windspeed">
                     <p></p>
                 </div>
-                <div class="notification"></div>
+                <div class="notification">
+                </div>
             </div>
             <div class="unitToggle-container">
                 <label class="switch">
@@ -55,7 +56,9 @@
             </div>
         </div>
     </div>
-   <script src="app.js" type="text/javascript"></script>
+    <script src="app.js"></script>
+    <script src="https://gijsroge.github.io/tilt.js/js/jquery.slim.min.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.1.21/dest/tilt.jquery.min.js"></script>
 </body>
 
 </html>
